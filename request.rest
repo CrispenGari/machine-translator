@@ -1,0 +1,142 @@
+###
+GET http://127.0.0.1:3002/
+####
+
+POST http://127.0.0.1:3002/identification
+Content-Type: application/json
+
+{
+    "text":"wher is the girl"
+}
+
+####
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"où est la fille?",
+    "from_": "fr",
+    "to": "eng"
+}
+
+
+####
+
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"hello, how are you?",
+    "from_": "eng",
+    "to": "af"
+}
+
+
+### eng -it
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"hello, how are you?",
+    "from_": "eng",
+    "to": "it"
+}
+
+### it - eng
+
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"ciao , come stai ?",
+    "from_": "it",
+    "to": "eng"
+}
+
+
+### eng - sw
+
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"no one did anything else.",
+    "from_": "eng",
+    "to": "sw"
+}
+
+### sw - eng
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"ingen gjorde n\u00e5got annat.",
+    "from_": "sw",
+    "to": "eng"
+}
+
+
+
+### eng -es
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"how are you boy?",
+    "from_": "eng",
+    "to": "es"
+}
+
+### es - eng
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"\u00bf c\u00f3mo eres chico ?",
+    "from_": "es",
+    "to": "eng"
+}
+
+
+### sw - eng
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"ingen gjorde n\u00e5got annat.",
+    "from_": "sw",
+    "to": "eng"
+}
+
+
+
+### eng -pt
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"how are you boy?",
+    "from_": "eng",
+    "to": "pt"
+}
+
+### pt - eng
+
+POST http://127.0.0.1:3002/translation
+Content-Type: application/json
+
+{
+    "text":"como voc\u00ea \u00e9 ?",
+    "from_": "pt",
+    "to": "eng"
+}

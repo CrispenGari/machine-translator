@@ -1,0 +1,62 @@
+# schema type
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+# OBJECT TYPES
+# 1. meta object type
+type Meta {
+  name: String!
+  language: String!
+  author: String!
+  package: String!
+  description: String!
+  project: String!
+}
+
+type Pred {
+  code: String!
+  id: Int!
+  name: String!
+}
+type PredType {
+  probability: Float!
+  prediction: Pred
+}
+
+type LanguageIdentificationPrediction {
+  probability: Float!
+  label: Int!
+  lang: String!
+  prediction: Pred
+  predictions: [PredType!]!
+}
+type LanguageTranslationPrediction {
+  from_: String!
+  meta: Meta!
+  sent: String!
+  to: String!
+  translation: String!
+}
+
+# INPUT TYPES
+input TranslationInputType {
+  text: String!
+  from_: String!
+  to: String!
+}
+input IdentificationInputType {
+  text: String!
+}
+
+# query type
+type Query {
+  hello: String!
+}
+# mutation type
+type Mutation {
+  hello: String
+  translate(input: TranslationInputType!): LanguageTranslationPrediction!
+  identify(input: IdentificationInputType!): LanguageIdentificationPrediction
+}

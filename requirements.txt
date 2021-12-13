@@ -1,0 +1,45 @@
+blis==0.7.4
+catalogue==2.0.6
+certifi==2021.5.30
+charset-normalizer==2.0.6
+click==8.0.1
+colorama==0.4.4
+cymem==2.0.5
+de-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.1.0/de_core_news_sm-3.1.0-py3-none-any.whl
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.1.0/en_core_web_sm-3.1.0-py3-none-any.whl
+es-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.1.0/es_core_news_sm-3.1.0-py3-none-any.whl
+Flask==2.0.1
+Flask-Cors==3.0.10
+fr-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.1.0/fr_core_news_sm-3.1.0-py3-none-any.whl
+idna==3.2
+it-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/it_core_news_sm-3.1.0/it_core_news_sm-3.1.0-py3-none-any.whl
+itsdangerous==2.0.1
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+murmurhash==1.0.5
+numpy==1.21.2
+packaging==21.0
+pathy==0.6.0
+Pillow==8.3.2
+preshed==3.0.5
+pt-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.1.0/pt_core_news_sm-3.1.0-py3-none-any.whl
+pydantic==1.8.2
+pyparsing==2.4.7
+requests==2.26.0
+six==1.16.0
+smart-open==5.2.1
+spacy==3.1.3
+spacy-legacy==3.0.8
+srsly==2.4.1
+thinc==8.0.10
+torch==1.9.1
+torchaudio==0.9.1
+torchtext==0.10.1
+torchvision==0.10.1
+tqdm==4.62.3
+typer==0.4.0
+typing-extensions==3.10.0.2
+unicode==2.8
+urllib3==1.26.7
+wasabi==0.8.2
+Werkzeug==2.0.1
