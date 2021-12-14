@@ -31,6 +31,7 @@ type LanguageIdentificationPrediction {
   lang: String!
   prediction: Pred
   predictions: [PredType!]!
+  meta: Meta!
 }
 type LanguageTranslationPrediction {
   from_: String!

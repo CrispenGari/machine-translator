@@ -6,7 +6,6 @@ from seq2seq.decoder import Decoder
 from seq2seq.encoder import Encoder
 from seq2seq.attention import Attention
 from seq2seq.seq2seq import Seq2Seq
-from flask_cors import cross_origin
 
 device = Constants.DEVICE
 base_dir = os.path.join(os.getcwd(), "translation/models")
@@ -19,7 +18,7 @@ class CustomException(Exception):
     pass
 
 # Tokenizers
-print(" *   LOADING TOKENIZERS\n")
+print(" ✅ LOADING TOKENIZERS\n")
 spacy_en = spacy.load('en_core_web_sm')
 spacy_de = spacy.load('de_core_news_sm')
 spacy_fr = spacy.load("fr_core_news_sm")
@@ -27,7 +26,7 @@ spacy_it = spacy.load("it_core_news_sm")
 spacy_es = spacy.load("es_core_news_sm")
 spacy_pt = spacy.load("pt_core_news_sm")
 
-print(" *   LOADING TOKENIZERS DONE!\n")
+print(" ✅ LOADING TOKENIZERS DONE!\n")
 generalTokenizer = lambda x: str(x).split(" ")
 
 
@@ -84,7 +83,7 @@ def createModel(
 
 # Load all the models here (bi-directional-models)
 
-print(" *   LOADING TRANSLATION MODELS\n")
+print(" ✅ LOADING TRANSLATION MODELS\n")
 # Bidirectional Germany - English
 DE_DE_DICT, DE_EN_DICT = createDictMappings('eng-deu')
 
@@ -223,7 +222,7 @@ INPUT_DIM = len(PO_EN_DICT)
 MODEL_NAME = os.path.join(base_dir, "eng-por", "eng-po.pt")
 en_po_model = createModel(INPUT_DIM, OUTPUT_DIM, SRC_PAD_IDX, MODEL_NAME)
 
-print(" *   LOADING TRANSLATION MODELS DONE!\n")
+print(" ✅ LOADING TRANSLATION MODELS DONE!\n")
 
 translation_models_blueprint = Blueprint("translation", __name__)
 
@@ -314,5 +313,5 @@ meta = {
     "author": "@crispengari",
     "package": "pytorch",
     "description": "language identification and translation graphql api.",
-    "project": "noteme"
+    "project": "machine translation and language identification"
 }

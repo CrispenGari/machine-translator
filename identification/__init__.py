@@ -12,6 +12,7 @@ device = Constants.DEVICE
 language_identification_blueprint = Blueprint("identification", __name__)
 tokenizer = lambda x: x.split(" ")
 
+
 with open (os.path.join(
     os.getcwd(), 'identification/static/labels_vocab.json'
 )) as f:
@@ -100,6 +101,15 @@ languages = [
   }
 ]
 
+meta = {
+    "name": "ml backend",
+    "language": "python",
+    "author": "@crispengari",
+    "package": "pytorch",
+    "description": "language identification and translation graphql api.",
+    "project": "machine translation and language identification"
+}
+
 def predict_language(model, sent):
   model.eval()
   sent = sent.lower()
@@ -122,15 +132,11 @@ def predict_language(model, sent):
       "lang": labels[item],
       "prediction":languages[item],
       "probability": round(probs[item].item(), 2),
-       "meta":{
-        "programmer":"@crispengari",
-        "project": "likeme",
-        "main": "artificial intelligence (nlp)"
-    },
-    "predictions":preds
+      "meta": meta,
+      "predictions":preds
   }
 
-print(" *   LOADING IDENTIFICATION MODEL\n")
+print(" ✅ LOADING IDENTIFICATION MODEL\n")
 language_identifier_model = LanguageIndentifierFastText(
         INPUT_DIM,
         EMBEDDING_DIM,
@@ -140,4 +146,4 @@ language_identifier_model = LanguageIndentifierFastText(
 language_identifier_model.load_state_dict(torch.load(os.path.join(
     os.getcwd(), 'identification/model/best-lang-ident-model.pt'
 ), map_location=device))
-print(" *   LOADING IDENTIFICATION MODEL DONE!\n")
+print(" ✅ LOADING IDENTIFICATION MODEL DONE!\n") 
